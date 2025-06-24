@@ -1,0 +1,23 @@
+run = "python3 main.py"
+modules = ["python-3.11"]
+
+[nix]
+channel = "stable-22_11"
+
+[env]
+PYTHONPATH = "/home/runner/$REPL_SLUG"
+PYTHONHASHSEED = "0"
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix"]
+
+[languages]
+
+[languages.python3]
+pattern = "**/*.py"
+
+[languages.python3.languageServer]
+start = "pylsp"
+
+[deployment]
+run = ["sh", "-c", "python3 main.py"]

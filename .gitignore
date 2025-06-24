@@ -1,0 +1,4 @@
+.env
+__pycache__/
+.venv/
+webex_recent_rooms.html
