@@ -11,7 +11,7 @@ if __name__ == "__main__":
     # Start keep-alive thread for Replit
     keep_alive()
     
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 3000))
     
     # More verbose logging for debugging
     print(f"🚀 Bot starting on port {port}")

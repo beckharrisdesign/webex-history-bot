@@ -11,8 +11,8 @@ def keep_alive():
         while True:
             try:
                 # Make a simple request to keep the server alive
-                # This assumes your bot is running on the default port
-                requests.get("http://localhost:5000", timeout=5)
+                # This assumes your bot is running on port 3000
+                requests.get("http://localhost:3000", timeout=5)
                 print("[INFO] Keep-alive ping sent")
             except Exception as e:
                 print(f"[WARNING] Keep-alive ping failed: {e}")

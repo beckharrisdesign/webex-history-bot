@@ -6,21 +6,22 @@ A Flask-based Webex bot that generates and shares conversation history reports f
 
 ## 📋 Recent Changes & Status
 
-### Current Status: ✅ FULLY FUNCTIONAL
-- ✅ Local development server working
-- ✅ Public tunnel via Cloudflare working
-- ✅ Webhook communication verified
+### Current Status: ✅ FULLY FUNCTIONAL (June 24, 2025)
+- ✅ Local development server working on port 3000
+- ✅ Public tunnel via Cloudflare working  
+- ✅ Webhook communication verified and FIXED
+- ✅ Message text parsing FIXED (major bug resolved)
 - ✅ Report generation and file sending working
+- ✅ Command detection ("summary"/"report") working perfectly
 - ✅ Code backed up to GitHub (beckharrisdesign/webex-history-bot)
 
-### Latest Updates (v2.0)
+### Latest Updates (v2.1 - MAJOR FIX)
+- **June 24, 2025**: 🎯 **CRITICAL BUG FIXED** - Message text parsing now working!
+- **Added**: `get_message_text()` function to fetch actual message content via API
+- **Fixed**: Webhook text parsing (webhooks don't include text directly)
+- **Enhanced**: Comprehensive debugging and error handling
+- **Verified**: Commands "summary" and "report" now work perfectly
 - **2024**: Migrated from Replit to local development with public tunnel
-- **Added**: Comprehensive webhook debugging and error handling
-- **Added**: Cloudflare Tunnel setup for public access
-- **Added**: Step-by-step restart guide for returning developers
-- **Added**: GitHub sync verification and status tracking
-- **Fixed**: Webhook reliability and response handling
-- **Documented**: Complete development workflow and troubleshooting
 
 ### Ready for Development 🛠️
 The bot is fully functional and ready for further development. See the "Returning Developer Guide" below for restart instructions.
@@ -79,8 +80,8 @@ python main.py
 ```
 
 ### Test Endpoints
-- Health check: `GET http://localhost:5000/`
-- Webhook: `POST http://localhost:5000/webhook`
+- Health check: `GET http://localhost:3000/`
+- Webhook: `POST http://localhost:3000/webhook`
 
 ## Usage
 
@@ -109,7 +110,7 @@ file_path = generate_report()
 cd /path/to/webex-history-bot
 python main.py
 ```
-✅ **Expected**: Server starts on `http://localhost:5000` with startup banner
+✅ **Expected**: Server starts on `http://localhost:3000` with startup banner
 
 ### Step 2: Set Up Public Tunnel
 In a **new terminal** (keep the server running):
@@ -118,7 +119,7 @@ In a **new terminal** (keep the server running):
 brew install cloudflared
 
 # Create tunnel to your local server
-cloudflared tunnel --url http://localhost:5000
+cloudflared tunnel --url http://localhost:3000
 ```
 ✅ **Expected**: You'll get a public URL like `https://xyz-abc-123.trycloudflare.com`
 
@@ -137,7 +138,7 @@ cloudflared tunnel --url http://localhost:5000
 4. Bot should respond with a conversation history report
 
 ### Quick Status Check
-- ✅ **Server**: Check `http://localhost:5000` shows "Webex History Bot is running!"
+- ✅ **Server**: Check `http://localhost:3000` shows "Webex History Bot is running!"
 - ✅ **Tunnel**: Check your tunnel URL is accessible publicly
 - ✅ **Webhook**: Verify webhook URL in Webex Developer Portal matches your tunnel
 - ✅ **Bot**: Send test message and check terminal for webhook logs
@@ -150,7 +151,7 @@ cloudflared tunnel --url http://localhost:5000
 
 ### Daily Workflow Summary
 1. `python main.py` (start server)
-2. `cloudflared tunnel --url http://localhost:5000` (new terminal)
+2. `cloudflared tunnel --url http://localhost:3000` (new terminal)
 3. Update webhook URL with new tunnel URL
 4. Test bot with a message
 5. Code, test, commit to GitHub

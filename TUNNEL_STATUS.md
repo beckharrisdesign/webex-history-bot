@@ -3,7 +3,7 @@
 ## ✅ Current Setup (June 24, 2025)
 
 ### **Live Development Environment:**
-- **Local Server**: http://localhost:5000
+- **Local Server**: http://localhost:3000
 - **Public Tunnel**: https://mrna-renewal-latitude-lm.trycloudflare.com
 - **Webhook URL**: https://mrna-renewal-latitude-lm.trycloudflare.com/webhook
 
@@ -32,5 +32,5 @@
 4. Deploy to production when stable
 
 ---
-**Tunnel Command**: `cloudflared tunnel --url http://localhost:5000`
+**Tunnel Command**: `cloudflared tunnel --url http://localhost:3000`
 **Bot Command**: `python main.py`
