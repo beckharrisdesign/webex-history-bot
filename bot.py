@@ -15,7 +15,14 @@ WEBEX_API_URL = 'https://webexapis.com/v1/messages'
 
 @app.route('/', methods=['GET'])
 def health_check():
-    return jsonify({'status': 'Bot is running', 'name': os.getenv('BOT_NAME', 'Webex History Bot')}), 200
+    return jsonify({
+        'status': '🚀 Bot is RUNNING with GitHub sync!', 
+        'name': os.getenv('BOT_NAME', 'Webex History Bot'),
+        'version': '2.0.0-GITHUB-SYNC',
+        'timestamp': '2025-06-24 UPDATED',
+        'github_repo': 'https://github.com/beckharrisdesign/webex-history-bot',
+        'message': '✅ If you see this, GitHub sync is working!'
+    }), 200
 
 @app.route('/webhook', methods=['POST'])
 def webhook():

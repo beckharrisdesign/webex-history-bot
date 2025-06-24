@@ -1,4 +1,6 @@
-# Webex History Bot
+# 🚀 Webex History Bot - GITHUB SYNC VERSION 2.0
+
+✅ **UPDATED VIA GITHUB SYNC - If you see this, sync is working!**
 
 A Flask-based Webex bot that generates and shares conversation history reports for recent room activity.
 
